@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { ApolloModule } from 'angular2-apollo';
+
+import  {provideClient}  from './client';
 
 import { AppComponent } from './app.component';
 
@@ -12,7 +15,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    ApolloModule.withClient(provideClient)
   ],
   providers: [],
   bootstrap: [AppComponent]
